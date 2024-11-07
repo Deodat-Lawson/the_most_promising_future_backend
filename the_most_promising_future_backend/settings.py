@@ -46,16 +46,15 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-  'corsheaders.middleware.CorsMiddleware',
-  'django.middleware.common.CommonMiddleware',
-  'django.middleware.security.SecurityMiddleware',
-  'django.contrib.sessions.middleware.SessionMiddleware',
-  'django.middleware.common.CommonMiddleware',
-  'whitenoise.middleware.WhitenoiseMiddleware',
-  'django.middleware.csrf.CsrfViewMiddleware',
-  'django.contrib.auth.middleware.AuthenticationMiddleware',
-  'django.contrib.messages.middleware.MessageMiddleware',
-  'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Move after SecurityMiddleware
+    'corsheaders.middleware.CorsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'the_most_promising_future_backend.urls'
@@ -77,35 +76,37 @@ TEMPLATES = [
   },
 ]
 
-CORS_ALLOWED_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-  'http://localhost:3000',
-  '3.22.143.86',
+    'http://localhost:3000',
+    'http://3.22.143.86'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-  'http://localhost:3000',
-  '3.22.143.86',  # React frontend origin
+    'http://localhost:3000',
+    'http://3.22.143.86'
 ]
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.22.143.86']
-
 WSGI_APPLICATION = 'the_most_promising_future_backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-  "default": {
-    "ENGINE": "django.db.backends.postgresql",
-    "NAME": "the_most_promising_future_backend_db",
-    "USER": "postgres",
-    "PASSWORD": "Duo200496?",
-    "HOST": "3.22.143.86",
-    "PORT": "5432",
-  }
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "the_most_promising_future_backend_db",
+        "USER": "postgres",
+        "PASSWORD": "Duo200496?",
+        "HOST": "localhost",  # Change from 3.22.143.86 to localhost
+        "PORT": "5432",
+    }
 }
+
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
