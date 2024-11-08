@@ -21,8 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-f+#2*^tc&dm(&lf)3c6u!2m6xzz_wcb$#i)wqxzlf)ujida4^)'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # Change to False for production
 
 ALLOWED_HOSTS = []
 
@@ -78,16 +77,68 @@ TEMPLATES = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://3.22.143.86'
+    'https://noraai.org',
+    'https://www.noraai.org',
+    'http://localhost:3000',  # keep for development
 ]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'http://3.22.143.86'
+    'https://noraai.org',
+    'https://www.noraai.org',
+    'https://api.noraai.org',
+    'http://localhost:3000',  # keep for development
 ]
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.22.143.86']
+
+ALLOWED_HOSTS = [
+    'api.noraai.org',
+    'noraai.org',
+    'www.noraai.org',
+    'localhost',
+    '127.0.0.1',
+    '3.22.143.86'
+]
+
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# HTTP Strict Transport Security
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+# Redirect HTTP to HTTPS
+SECURE_SSL_REDIRECT = True
+
+# Other security headers
+SECURE_REFERRER_POLICY = 'same-origin'
+SECURE_BROWSER_XSS_FILTER = True
+
+
 WSGI_APPLICATION = 'the_most_promising_future_backend.wsgi.application'
 
 # Database
