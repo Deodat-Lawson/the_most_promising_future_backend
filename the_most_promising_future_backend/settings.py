@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Move after SecurityMiddleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -121,20 +121,7 @@ ALLOWED_HOSTS = [
 ]
 
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-
-# HTTP Strict Transport Security
-SECURE_HSTS_SECONDS = 31536000  # 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-
-# Redirect HTTP to HTTPS
-SECURE_SSL_REDIRECT = True
-
-# Other security headers
-SECURE_REFERRER_POLICY = 'same-origin'
-SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = False
 
 
 WSGI_APPLICATION = 'the_most_promising_future_backend.wsgi.application'
