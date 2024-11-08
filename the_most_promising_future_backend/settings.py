@@ -78,11 +78,7 @@ TEMPLATES = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    'https://noraai.org',
-    'https://www.noraai.org',
-    'http://localhost:3000',  # keep for development
-]
+CORS_ALLOW_ALL_ORIGINS = True  # This will allow all origins
 
 CORS_ALLOW_METHODS = [
     'DELETE',
