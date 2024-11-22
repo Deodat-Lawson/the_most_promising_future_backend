@@ -27,7 +27,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# Amazon S3 Configuration
+AWS_ACCESS_KEY_ID = "AKIATQPD7HI6S3DDHVPM"
+AWS_SECRET_ACCESS_KEY = "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"
 
+AWS_STORAGE_BUCKET_NAME = "awsbucketnora"
+
+STORAGES={"staticfiles": {"BACKEND" : "storages.backends.s3boto3.S3Boto3Storage"}}
+
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+ADMIN_MEDIA_PREFIX = f"/static/admin/"
 
 INSTALLED_APPS = [
   'corsheaders',
@@ -138,9 +148,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "the_most_promising_future_backend_db",
-        "USER": "postgres",
-        "PASSWORD": "Duo200496?",
-        "HOST": "localhost",  # Change from 3.22.143.86 to localhost
+        "USER": "postgresnora",
+        "PASSWORD": "Noraai2024",
+        "HOST": "database-1.chgsycyquh5t.us-east-1.rds.amazonaws.com",  # Change from 3.22.143.86 to localhost
         "PORT": "5432",
     }
 }
