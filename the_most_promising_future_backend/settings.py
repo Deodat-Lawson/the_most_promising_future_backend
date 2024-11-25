@@ -68,20 +68,35 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',  # React frontend origin
 ]
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '45.55.61.32']
 WSGI_APPLICATION = 'the_most_promising_future_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "the_most_promising_future_backend_db",
-        "USER": "postgres",
-        "PASSWORD": "Duo200496?",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "NAME": "noraiai_db",
+        "USER": "timothy",
+        "PASSWORD": "AVNS_PiKpZJ7nOOudvpxv87B",
+        "HOST": "db-postgresql-noraai-do-user-18415680-0.g.db.ondigitalocean.com",
+        "PORT": "25060",
     }
 }
+
+
+
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "the_most_promising_future_backend_db",
+#         "USER": "postgres",
+#         "PASSWORD": "Duo200496?",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
