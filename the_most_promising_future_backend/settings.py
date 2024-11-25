@@ -16,7 +16,6 @@ SECRET_KEY = 'django-insecure-f+#2*^tc&dm(&lf)3c6u!2m6xzz_wcb$#i)wqxzlf)ujida4^)
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
     'corsheaders',
@@ -68,7 +67,7 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',  # React frontend origin
 ]
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '45.55.61.32']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '45.55.61.32', 'nora-ai.xyz', 'www.nora-ai.xyz']
 WSGI_APPLICATION = 'the_most_promising_future_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
