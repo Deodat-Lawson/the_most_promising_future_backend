@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'the_most_promising_future_backend.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "noraiai_db",
-        "USER": "timothy",
-        "PASSWORD": "AVNS_PiKpZJ7nOOudvpxv87B",
+        "NAME": "defaultdb",
+        "USER": "doadmin",
+        "PASSWORD": "AVNS_gxQzur3xO1OAaNkul_q",
         "HOST": "db-postgresql-noraai-do-user-18415680-0.g.db.ondigitalocean.com",
         "PORT": "25060",
     }
